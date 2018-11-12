@@ -6,6 +6,7 @@ export default class Axios{
             JsonP(options.url,{
                 param:'callback'
             },function(err,response){
+                console.log(response)
                 if(response.status == 'success'){
                     resolve(response);
                 }else{

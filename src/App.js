@@ -6,9 +6,8 @@ import {Button} from 'antd'
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Button type="primary">点一下</Button>  
-        <button>点一下</button>
+      <div>
+        {this.props.children}
       </div>
     );
   }

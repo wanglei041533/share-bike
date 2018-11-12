@@ -1,5 +1,6 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
+import { NavLink } from 'react-router-dom'
 import menuConfig from '../../config/menuConfig'
 import './index.less'
 
@@ -29,14 +30,15 @@ export default class NavLeft extends React.Component{
                     </SubMenu>
                 )
             }
-            return <Menu.Item key={item.key}>{ item.title }</Menu.Item>
+            return <Menu.Item key={item.key}>
+            <NavLink to={item.key}>{ item.title }</NavLink></Menu.Item>
 
         })
     }
 
     render(){
         return(
-            <div className="nav-left">
+            <div>
                 <div className="logo">
                     <img src="/assets/logo-ant.svg" alt=""/>
                     <h1>wl ms</h1>
