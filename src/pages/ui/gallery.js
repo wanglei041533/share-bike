@@ -27,7 +27,7 @@ export default class Gallery extends React.Component {
         ];
         const imgList = imgs.map((list)=>list.map((item)=>
             <Card
-                cover={<img src={'/gallery/'+item}/>}
+                cover={<img src={'/gallery/'+item} alt=''/>}
                 key={item}
                 style={{marginBottom:10}}
                 onClick={()=>this.openGallery(item)}
