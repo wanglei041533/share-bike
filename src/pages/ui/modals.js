@@ -26,7 +26,7 @@ export default class Modals extends React.Component{
         Modal[type]({
             title:'确认',
             content:'你确认学会react了吗',
-            onkeydown(){
+            onOk(){
                 console.log('ok')
             },
             onCancel(){
