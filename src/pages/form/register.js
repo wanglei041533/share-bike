@@ -220,7 +220,7 @@ class FormRegister extends React.Component{
 						</FormItem>
 						<FormItem {...offsetLayout}>
 							{
-								getFieldDecorator('userImg')(
+								getFieldDecorator('agreement')(
 									<Checkbox>
 										我已经阅读过<a href="www.baidu.com">协议</a>
 									</Checkbox>
