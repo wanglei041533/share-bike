@@ -1,6 +1,17 @@
 @import './default.less';
 @import './loading.less';
 
+ul,li{
+    list-style: none;
+}
+.clearfix{
+    &::after{
+        content:'';
+        clear:both;
+        display: block;
+        visibility: hidden;
+    }
+}
 .container{
     .nav-left{
         background-color:#001529;
@@ -12,10 +23,11 @@
         height: 100vh;
         overflow: auto;
     }
-    .content{
-        position: relative;
-        padding: 20px;
-    }
+
+}
+.content{
+    position: relative;
+    padding: 20px;
 }
 .content-wrap{
     background-color: #fff;
