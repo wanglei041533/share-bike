@@ -23,6 +23,7 @@ import BikeMap from './pages/map/bikeMap'
 import Bar from './pages/echarts/bar/index'
 import Pie from './pages/echarts/pie/index'
 import Line from './pages/echarts/line/index'
+import RichText from './pages/rich/index'
 import Common from './common'
 import NoMatch from './pages/nomatch'
 
@@ -55,6 +56,7 @@ export default class IRouter extends React.Component{
                                 <Route path="/admin/charts/bar" component={Bar} />
                                 <Route path="/admin/charts/pie" component={Pie} />
                                 <Route path="/admin/charts/line" component={Line} />
+                                <Route path="/admin/rich" component={RichText} />
                                 <Route component={NoMatch}/>
                             </Switch>
                         </Admin>
