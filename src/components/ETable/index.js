@@ -31,6 +31,7 @@ export default class ETable extends React.Component{
             }
             this.props.updateSelectedItem(selectedRowKeys, selectedItem || {}, selectedIds)
         }else{
+            console.log(record)
             let selectKey = [index];
             const selectedRowKeys = this.props.selectedRowKeys;
             if (selectedRowKeys && selectedRowKeys[0] == index){

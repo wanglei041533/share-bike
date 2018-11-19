@@ -48,6 +48,7 @@ export default {
                 selectedItem: selectedRows
             })
         } else {
+            console.log(selectedRows)
             this.setState({
                 selectedRowKeys,
                 selectedItem: selectedRows

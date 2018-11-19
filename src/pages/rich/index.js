@@ -30,7 +30,6 @@ export default class Rich extends React.Component {
     }
 
     onEditorStateChange = (editorState) => {
-        console.log(editorState)
         this.setState({
             editorState
         })
