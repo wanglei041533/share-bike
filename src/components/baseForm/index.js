@@ -66,7 +66,7 @@ class FilterForm extends React.Component{
                             getFieldDecorator(field, {
                                 initialValue: initialValue
                             })(
-                                <Input  type="text" placeholder={placeHolder}/>
+                                <Input style={{width:width}} type="text" placeholder={placeHolder}/>
                             )
                         }
                     </FormItem>;
@@ -85,6 +85,15 @@ class FilterForm extends React.Component{
                         }
                     </FormItem>;
                     formItemList.push(CHECKBOX);
+                } else if (item.type == 'DATE') {
+                    const DATE = <FormItem label={label} key={field}>
+                        {
+                            getFieldDecorator(field)(
+                                <DatePicker style={{width:width}} showTime={true} placeholder={placeHolder} format="YYYY-MM-DD HH:mm:ss" />
+                            )
+                        }
+                    </FormItem>;
+                    formItemList.push(DATE);
                 }
             })
         };

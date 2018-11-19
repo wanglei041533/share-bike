@@ -3,6 +3,7 @@ import { Card, Button, Table, Form, Select, Modal, message, DatePicker } from 'a
 import axios from '../../axios/index'
 import Utils from '../../utils/utils'
 import BaseForm from '../../components/baseForm/index'
+import ETable from '../../components/ETable/index'
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -179,6 +180,7 @@ export default class Order extends React.Component {
             type:'radio',
             selectedRowKeys
         }
+        console.log(this.state)
         return(
             <div>
                 <Card>
@@ -189,19 +191,16 @@ export default class Order extends React.Component {
                     <Button type="primary" style={{marginLeft:10}} onClick={this.handleConfirm}>结束订单</Button>
                 </Card>
                 <div className="content-wrap">
-                    <Table 
-                        bordered
+                    <ETable
+                        updateSelectedItem={Utils.updateSelectedItem.bind(this)}
                         columns={columns}
                         dataSource={this.state.list}
+                        selectedRowKeys={this.state.selectedRowKeys}
+                        selectedIds={this.state.selectedIds}
+                        selectedItem={this.selectedItem}
                         pagination={this.state.pagination}
-                        rowSelection={rowSelection}
-                        onRow={(record, index)=>{
-                            return {
-                                onClick:()=>{
-                                    this.onRowClick(record,index)
-                                }
-                            }
-                        }}
+                        rowSelection='radio'
+
                     />
                 </div>
                 <Modal 
