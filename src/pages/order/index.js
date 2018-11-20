@@ -180,7 +180,6 @@ export default class Order extends React.Component {
             type:'radio',
             selectedRowKeys
         }
-        console.log(this.state)
         return(
             <div>
                 <Card>

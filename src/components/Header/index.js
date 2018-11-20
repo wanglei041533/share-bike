@@ -1,10 +1,12 @@
 import React from 'react'
-import { Row, Col } from 'antd'
+import { Row, Col, Modal } from 'antd'
 import './index.less'
 import Util from '../../utils/utils'
 import axios from '../../axios/index'
+import { connect } from 'react-redux';
 
-export default class Header extends React.Component{
+class Header extends React.Component{
+    state={}
     componentWillMount(){
         this.setState({
             userName:'wanglei'
@@ -34,6 +36,15 @@ export default class Header extends React.Component{
         })
     }
 
+    handleExitConfirm = ()=>{
+        Modal.confirm({
+            content:'是否确定退出系统',
+            onOk:()=>{
+                window.location.href = '/#/login'
+            }
+        })
+    }
+
     render(){
         const menuType = this.props.menuType;
         return(
@@ -48,14 +59,14 @@ export default class Header extends React.Component{
                     }
                     <Col span={menuType?18:24}>
                         <span>欢迎,{this.state.userName}</span>
-                        <a href='www.baidu.com'>退出</a>
+                        <a href='#' onClick={this.handleExitConfirm}>退出</a>
                     </Col>
                 </Row>
                 {
                     menuType?"":
                         <Row className="breadcrumb">
                             <Col span="4" className="breadcrumb-title">
-                                首页
+                                {this.props.menuName}
                         </Col>
                             <Col span="20" className="weather">
                                 <span className="date">{this.state.sysTime}</span>
@@ -72,3 +83,9 @@ export default class Header extends React.Component{
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+        menuName: state.menuName
+    }
+};
+export default connect(mapStateToProps)(Header)
